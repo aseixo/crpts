@@ -3,12 +3,9 @@ package org.kappa.springjpa.corrupcion.appcontroller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.TypedQuery;
-
 import org.kappa.springjpa.corrupcion.CorrupcionApplication;
 import org.kappa.springjpa.corrupcion.appservice.AppService;
 import org.kappa.springjpa.corrupcion.model.Corrupto;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
