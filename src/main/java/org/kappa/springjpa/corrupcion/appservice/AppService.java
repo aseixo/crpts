@@ -3,7 +3,10 @@ package org.kappa.springjpa.corrupcion.appservice;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.TypedQuery;
+
 import org.kappa.springjpa.corrupcion.model.Corrupto;
+import org.kappa.springjpa.corrupcion.model.CorruptoActivadeDTO;
 
 public interface AppService {
 	
@@ -16,5 +19,7 @@ public interface AppService {
 	public List<Corrupto> todosPorPartido();
 	public List<Corrupto> buscarAsunto(String asunto);
 	public void eliminar(Corrupto c);
-
+	public Object[] getAllCorruptosActividades();
+	public List<Corrupto> qryTodosCorruptos();
+	public List<Object[]> getAllListCorruptosActividades();
 }
