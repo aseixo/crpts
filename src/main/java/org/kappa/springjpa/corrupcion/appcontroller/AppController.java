@@ -46,6 +46,11 @@ public class AppController {
 		return appService.getAllCorruptosActividades();
 	}
 	
+	@GetMapping("/lastid")
+	public Integer getLastId() {
+		return appService.getlast_corrupto_id();
+	}
+	
 	@GetMapping("/listaactividade")
 	public List<Object[]> verListaPorCorruptosPorActividade() {
 		

@@ -22,4 +22,5 @@ public interface AppService {
 	public Object[] getAllCorruptosActividades();
 	public List<Corrupto> qryTodosCorruptos();
 	public List<Object[]> getAllListCorruptosActividades();
+	public Integer getlast_corrupto_id();
 }

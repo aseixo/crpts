@@ -75,5 +75,11 @@ public class AppServiceImpl implements AppService {
 		
 		List<Object[]> l = corrupcionRepo.getAllListCorruptosActividades();
 		return l;
+	}
+
+	@Override
+	public Integer getlast_corrupto_id() {
+		
+		return corrupcionRepo.getlast_corrupto_id();
 	}	
 }
