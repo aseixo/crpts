@@ -25,11 +25,7 @@ public class AppController {
 	@Autowired
 	AppService appService;
 	
-	@GetMapping("/")
-	public String index() {
-		return "Aplicativo " + CorrupcionApplication.class.getName() + " iniciado";
-	}
-	
+		
 	@GetMapping("/todos")
 	public List<Corrupto> verTodos() {
 		//return appService.todos();
@@ -47,8 +43,8 @@ public class AppController {
 	}
 	
 	@GetMapping("/lastid")
-	public Integer getLastId() {
-		return appService.getlast_corrupto_id();
+	public String getLastId() {
+		return appService.getlast_corrupto_id(1).toString();
 	}
 	
 	@GetMapping("/listaactividade")

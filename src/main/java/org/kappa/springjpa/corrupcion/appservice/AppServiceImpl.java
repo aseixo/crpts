@@ -78,8 +78,8 @@ public class AppServiceImpl implements AppService {
 	}
 
 	@Override
-	public Integer getlast_corrupto_id() {
+	public Integer getlast_corrupto_id(Integer last_id) {
 		
-		return corrupcionRepo.getlast_corrupto_id();
+		return corrupcionRepo.getlast_corrupto_id(last_id);
 	}	
 }

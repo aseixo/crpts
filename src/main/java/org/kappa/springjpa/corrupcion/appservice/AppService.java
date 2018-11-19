@@ -7,6 +7,7 @@ import javax.persistence.TypedQuery;
 
 import org.kappa.springjpa.corrupcion.model.Corrupto;
 import org.kappa.springjpa.corrupcion.model.CorruptoActivadeDTO;
+import org.springframework.data.repository.query.Param;
 
 public interface AppService {
 	
@@ -22,5 +23,5 @@ public interface AppService {
 	public Object[] getAllCorruptosActividades();
 	public List<Corrupto> qryTodosCorruptos();
 	public List<Object[]> getAllListCorruptosActividades();
-	public Integer getlast_corrupto_id();
+	public Integer getlast_corrupto_id(Integer last_id);
 }

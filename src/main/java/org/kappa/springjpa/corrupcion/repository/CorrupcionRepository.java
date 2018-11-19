@@ -26,5 +26,5 @@ public interface CorrupcionRepository extends CrudRepository<Corrupto, Long> {
 	public List<Object[]> getAllListCorruptosActividades();
 	
 	@Query(value = "{call last_corrupto_id}", nativeQuery= true)
-	public Integer getlast_corrupto_id();
+	public Integer getlast_corrupto_id(@Param("last_id") Integer last_id);
 }
