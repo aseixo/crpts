@@ -15,7 +15,6 @@ public interface CorrupcionRepository extends CrudRepository<Corrupto, Long> {
 	public List<Corrupto> buscarAsunto(@Param("asunto") String asunto);
 	
 	@Transactional
-	//@Procedure(procedureName= "getAllByName")
 	@Query(value = "{call getAllByName}", nativeQuery= true)
 	public Object[] getAllCorruptosActividades();
 	
