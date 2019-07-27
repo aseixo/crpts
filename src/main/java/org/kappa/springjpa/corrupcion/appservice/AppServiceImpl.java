@@ -3,8 +3,11 @@ package org.kappa.springjpa.corrupcion.appservice;
 import java.util.List;
 import java.util.Optional;
 
+import org.kappa.springjpa.corrupcion.appcontroller.AppController;
 import org.kappa.springjpa.corrupcion.model.Corrupto;
 import org.kappa.springjpa.corrupcion.repository.CorrupcionRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class AppServiceImpl implements AppService {
+	
+	private static Logger logger = LoggerFactory.getLogger(AppController.class);
 	
 	@Autowired
 	CorrupcionRepository corrupcionRepository;
@@ -80,6 +85,7 @@ public class AppServiceImpl implements AppService {
 	
 	public Optional<List<Corrupto>> buscarNome(){
 		
+		logger.info("consulta nome, partido ascendente");
 		return corrupcionRepository.buscarNome();
 	}
 

@@ -87,6 +87,7 @@ public class AppController {
 	@GetMapping("/proba")
 	public ResponseEntity<Optional<List<Corrupto>>> buscarNome() {
 
+		logger.info("consulta de todos os corruptos na bd");
 		Optional<List<Corrupto>> resNome = appService.buscarNome();
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.set("MyResponseHeader", "MyValue");
