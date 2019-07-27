@@ -28,7 +28,5 @@ public interface CorrupcionRepository extends CrudRepository<Corrupto, Long> {
 	
 	@Query(value = "{call last_corrupto_id}", nativeQuery= true)
 	public Integer getlastCorruptoId(@Param("last_id") Integer lastId);
-	
-//	@Query(value = "select c from Corrupto")
-//	public Optional<List<Corrupto>> getByNome();
+
 }

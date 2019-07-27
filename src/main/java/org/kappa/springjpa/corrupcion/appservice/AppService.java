@@ -20,4 +20,7 @@ public interface AppService {
 	public List<Corrupto> qryTodosCorruptos();
 	public List<Object[]> getAllListCorruptosActividades();
 	public Integer getlastCorruptoId(Integer lastId);
+	public Optional<List<Corrupto>> buscarNome();
+
+
 }

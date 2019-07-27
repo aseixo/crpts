@@ -77,4 +77,12 @@ public class AppServiceImpl implements AppService {
 		
 		return corrupcionRepository.getlastCorruptoId(lastId);
 	}	
+	
+	public Optional<List<Corrupto>> buscarNome(){
+		
+		return corrupcionRepository.buscarNome();
+	}
+
+
+
 }
