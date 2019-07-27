@@ -1,6 +1,7 @@
 package org.kappa.springjpa.corrupcion.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -26,4 +27,7 @@ public interface CorrupcionRepository extends CrudRepository<Corrupto, Long> {
 	
 	@Query(value = "{call last_corrupto_id}", nativeQuery= true)
 	public Integer getlastCorruptoId(@Param("last_id") Integer lastId);
+	
+	@Query(value = "select c from Corrupto where nome like :nome")
+	public Optional<List<Corrupto>> getByNome(String nome);
 }
