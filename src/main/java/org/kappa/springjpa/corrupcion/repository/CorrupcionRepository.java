@@ -14,6 +14,7 @@ public interface CorrupcionRepository extends CrudRepository<Corrupto, Long> {
 	
 	public List<Corrupto> todosPorPartido();
 	public List<Corrupto> buscarAsunto(@Param("asunto") String asunto);
+	public Optional<List<Corrupto>> buscarNome();
 	
 	@Transactional
 	@Query(value = "{call getAllByName}", nativeQuery= true)
@@ -28,6 +29,6 @@ public interface CorrupcionRepository extends CrudRepository<Corrupto, Long> {
 	@Query(value = "{call last_corrupto_id}", nativeQuery= true)
 	public Integer getlastCorruptoId(@Param("last_id") Integer lastId);
 	
-	@Query(value = "select c from Corrupto where nome like :nome")
-	public Optional<List<Corrupto>> getByNome(String nome);
+//	@Query(value = "select c from Corrupto")
+//	public Optional<List<Corrupto>> getByNome();
 }

@@ -14,67 +14,67 @@ import org.springframework.transaction.annotation.Transactional;
 public class AppServiceImpl implements AppService {
 	
 	@Autowired
-	CorrupcionRepository corrupcionRepo;
+	CorrupcionRepository corrupcionRepository;
 
 	@Override
 	public void engadir(Corrupto c) {
-		corrupcionRepo.save(c);
+		corrupcionRepository.save(c);
 	}
 
 	@Override
 	public List<Corrupto> todos() {
-		return  (List<Corrupto>) corrupcionRepo.findAll();
+		return  (List<Corrupto>) corrupcionRepository.findAll();
 	}
 
 	@Override
 	public Optional<Corrupto> encontrarId(Long id) {
-		return corrupcionRepo.findById(id);
+		return corrupcionRepository.findById(id);
 	}
 
 	@Override
 	public Long total() {
-		return corrupcionRepo.count();
+		return corrupcionRepository.count();
 	}
 
 	@Override
 	public List<Corrupto> todosPorPartido() {
 		
-		return corrupcionRepo.todosPorPartido();
+		return corrupcionRepository.todosPorPartido();
 	}
 
 	@Override
 	public List<Corrupto> buscarAsunto(String asunto) {
 		
-		return corrupcionRepo.buscarAsunto(asunto);
+		return corrupcionRepository.buscarAsunto(asunto);
 	}
 
 	@Override
 	public void eliminar(Corrupto c) {
-		corrupcionRepo.delete(c);
+		corrupcionRepository.delete(c);
 		
 	}
 
 	@Override
 	public Object[] getAllCorruptosActividades() {
 		
-		return  corrupcionRepo.getAllCorruptosActividades();
+		return  corrupcionRepository.getAllCorruptosActividades();
 	}
 
 	@Override
 	public List<Corrupto> qryTodosCorruptos() {
 		
-		return corrupcionRepo.qryTodosCorruptos();
+		return corrupcionRepository.qryTodosCorruptos();
 	}
 
 	@Override
 	public List<Object[]> getAllListCorruptosActividades() {
 
-		return corrupcionRepo.getAllListCorruptosActividades();
+		return corrupcionRepository.getAllListCorruptosActividades();
 	}
 
 	@Override
 	public Integer getlastCorruptoId(Integer lastId) {
 		
-		return corrupcionRepo.getlastCorruptoId(lastId);
+		return corrupcionRepository.getlastCorruptoId(lastId);
 	}	
 }

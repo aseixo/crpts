@@ -15,6 +15,7 @@ import javax.persistence.Table;
 @Table(name = "corruptos")
 @NamedQueries({
 		@NamedQuery(name = "Corrupto.todosPorPartido", query = "select c from Corrupto c where c.partido <>'*' order by c.partido, c.nome asc"),
+		@NamedQuery(name = "Corrupto.buscarNome", query = "select c from Corrupto c"),
 		@NamedQuery(name = "Corrupto.buscarAsunto", query = "select c from Corrupto c where c.asunto like concat('%', :asunto,'%') ") })
 public class Corrupto implements Serializable {
 
