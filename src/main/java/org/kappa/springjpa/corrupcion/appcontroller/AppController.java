@@ -3,7 +3,6 @@ package org.kappa.springjpa.corrupcion.appcontroller;
 import java.util.List;
 import java.util.Optional;
 
-import org.kappa.springjpa.corrupcion.CorrupcionApplication;
 import org.kappa.springjpa.corrupcion.appservice.AppService;
 import org.kappa.springjpa.corrupcion.model.Corrupto;
 import org.slf4j.Logger;
@@ -25,7 +24,6 @@ public class AppController {
 	@Autowired
 	AppService appService;
 	
-		
 	@GetMapping("/todos")
 	public List<Corrupto> verTodos() {
 		//return appService.todos();
@@ -44,7 +42,7 @@ public class AppController {
 	
 	@GetMapping("/lastid")
 	public String getLastId() {
-		return appService.getlast_corrupto_id(1).toString();
+		return appService.getlastCorruptoId(1).toString();
 	}
 	
 	@GetMapping("/listaactividade")
@@ -52,7 +50,7 @@ public class AppController {
 		
 		List<Object[]> l = appService.getAllListCorruptosActividades();
 		for (Object[] obj: l) {
-			logger.info((obj[0].toString() + " " + obj[1].toString() + " " + obj[2].toString() + " " + obj[3].toString() ));
+			logger.info("{} {} {} {}", obj[0], obj[1], obj[2], obj[3]);
 		}
 		return appService.getAllListCorruptosActividades();
 	}

@@ -1,13 +1,9 @@
 package org.kappa.springjpa.corrupcion.appservice;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.TypedQuery;
-
 import org.kappa.springjpa.corrupcion.model.Corrupto;
-import org.kappa.springjpa.corrupcion.model.CorruptoActivadeDTO;
 import org.kappa.springjpa.corrupcion.repository.CorrupcionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -72,14 +68,13 @@ public class AppServiceImpl implements AppService {
 
 	@Override
 	public List<Object[]> getAllListCorruptosActividades() {
-		
-		List<Object[]> l = corrupcionRepo.getAllListCorruptosActividades();
-		return l;
+
+		return corrupcionRepo.getAllListCorruptosActividades();
 	}
 
 	@Override
-	public Integer getlast_corrupto_id(Integer last_id) {
+	public Integer getlastCorruptoId(Integer lastId) {
 		
-		return corrupcionRepo.getlast_corrupto_id(last_id);
+		return corrupcionRepo.getlastCorruptoId(lastId);
 	}	
 }
