@@ -89,6 +89,14 @@ public class AppServiceImpl implements AppService {
 		return corrupcionRepository.buscarNome();
 	}
 
+	@Override
+	public Optional<List<Object>> joinActividade() {
+		
+		logger.info("consulta inner join corrupto actividade");
+		return 	corrupcionRepository.joinActividade(); 
+
+	}
+
 
 
 }

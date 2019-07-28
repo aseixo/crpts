@@ -94,5 +94,16 @@ public class AppController {
 		ResponseEntity<Optional<List<Corrupto>>> entity = new ResponseEntity<>(resNome, responseHeaders, HttpStatus.OK);
 		return entity;
 	}
+	
+	@GetMapping("/join")
+	public ResponseEntity<Optional<List<Object>>> joinActividade() {
+
+		logger.info("consulta join corruptos actividade");
+		Optional<List<Object>> resNome = appService.joinActividade();
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.set("CorruptosJoinActividade", "consultajoin");
+		ResponseEntity<Optional<List<Object>>> entity = new ResponseEntity<>(resNome, responseHeaders, HttpStatus.OK);
+		return entity;
+	}
 
 }

@@ -15,6 +15,7 @@ public interface CorrupcionRepository extends CrudRepository<Corrupto, Long> {
 	public List<Corrupto> todosPorPartido();
 	public List<Corrupto> buscarAsunto(@Param("asunto") String asunto);
 	public Optional<List<Corrupto>> buscarNome();
+	public Optional<List<Object>> joinActividade(); 
 	
 	@Transactional
 	@Query(value = "{call getAllByName}", nativeQuery= true)
